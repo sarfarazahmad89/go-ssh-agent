@@ -7,12 +7,16 @@ You might prefer this over Microsoft's port of OpenSSH as that one lacks a few t
 ### BUILD
 ##### Linux or Windows
 ````
+$ git clone https://github.com/sarfarazahmad89/go-ssh-agent
+$ cd go-ssh-agent
 $ go build .
 ````
 #####
 
 ##### Cross build (Linux -> Windows) 
 ````
-GOOS="windows" GOARCH="amd64" go build .
+$ git clone https://github.com/sarfarazahmad89/go-ssh-agent
+$ cd go-ssh-agent
+$ GOOS="windows" GOARCH="amd64" go build .
 ````
 #####
