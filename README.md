@@ -10,6 +10,12 @@ You might prefer this over Microsoft's port of OpenSSH as that one lacks a few t
 $ git clone https://github.com/sarfarazahmad89/go-ssh-agent
 $ cd go-ssh-agent
 $ go build .
+$ ./ssh_agent -h
+Usage of ./ssh_agent:
+  -sshpipe string
+        UNIX socket for the OpenSSH agent (default "/home/ahmad/.ssh/ssh-auth-sock")
+$ ./ssh_agent
+2023/02/12 11:31:21 started ssh agent on `/home/user1/.ssh/ssh-auth-sock`
 ````
 #####
 
