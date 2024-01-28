@@ -21,10 +21,17 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	// Default the sockpath to homedir/.ssh/ssh-auth-sock
 	sockPathDefault := filepath.Join(homedir, ".ssh", "ssh-auth-sock")
 	sockPath := flag.String("sshpipe", sockPathDefault, "UNIX socket for the OpenSSH agent")
 	flag.Parse()
+
+	_, err = net.Dial("unix", *sockPath)
+	if err != nil {
+		log.Printf("removing dead unixsock at '%s'", *sockPath)
+		os.Remove(*sockPath)
+	}
 
 	// Listen for SIGINT, SIGTERM and cleanup on shutdown
 	sigChannel := make(chan os.Signal, 1)
