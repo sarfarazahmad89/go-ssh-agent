@@ -1,4 +1,4 @@
-module go_ssh_agent
+module github.com/sarfarazahmad89/go-ssh-agent
 
 go 1.19
 
